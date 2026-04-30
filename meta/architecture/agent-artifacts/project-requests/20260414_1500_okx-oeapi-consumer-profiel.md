@@ -1,6 +1,6 @@
 ---
 created: "2026-04-14T15:00:00+02:00"
-updated: "2026-04-28T15:54:00+02:00"
+updated: "2026-04-29T15:20:00+02:00"
 human_authors:
   - "Niek Derksen (Architect OKx)"
 human_reviewers: []
@@ -116,8 +116,8 @@ Een **fundamenteel ontwerpprincipe**: de onderwijsspecificatie aggregeert bottom
 ```
 Programme "Apothekersassistent" (level: mbo-4, studyLoad: 4800 SBU)
 │  ▸ learningOutcomes: [alle kerntaak-afgeleide LO's]
-│  ▸ OKx: waardeDocument: diploma
-│  ▸ OKx: kwalificatieRef: { dossier: "25391", kwalificatie: "25396" }
+│  ▸ OKx: credentialDocument: { type: diploma, register: "DUO" }
+│  ▸ OKx: qualificationReference: { scheme: "crebo", dossier: "23450", qualification: "27141" }
 │  ▸ SOM studyLoad children = 4800 SBU ✓
 │
 ├── Programme "Track: Regulier voltijd" (programmeType: track)
@@ -127,38 +127,38 @@ Programme "Apothekersassistent" (level: mbo-4, studyLoad: 4800 SBU)
 │   ├── Course "Baliegesprekken en cliëntcommunicatie" (studyLoad: 240 SBU)
 │   │   │  ▸ learningOutcomes: ["Voert professionele baliegesprekken",
 │   │   │  │                     "Cliëntgericht handelen"]
-│   │   │  ▸ OKx: waardeDocument: microcredential
-│   │   │  ▸ OKx: onderwijsSpecificatie:
-│   │   │  │    leervorm: simulatie
-│   │   │  │    tijdsbesteding: { bot: 160, oot: 80, eenheid: sbu }
-│   │   │  │    ruimteType: praktijkruimte_simulatie
-│   │   │  │    expertiseProfiel: ["rollenspel_training", "farmaceutisch"]
-│   │   │  │    leermiddelGroepen: ["simulatie_materiaal", "digitaal_werkstation"]
+│   │   │  ▸ OKx: credentialDocument: { type: microcredential, register: "edubadges.nl" }
+│   │   │  ▸ OKx: educationSpecification:
+│   │   │  │    deliveryForm: simulation
+│   │   │  │    timeAllocation: { bot: 160, oot: 80, unit: sbu }
+│   │   │  │    roomType: simulation_practice_room
+│   │   │  │    expertiseProfiles: ["roleplay_training", "pharmaceutical"]
+│   │   │  │    learningResourceGroups: ["simulation_material", "digital_workstation"]
 │   │   │  ▸ SOM componentStudyLoad children = 240 SBU ✓
 │   │   │
 │   │   ├── LearningComponent "Leeractiviteit: Gespreksvoering simulatie"
 │   │   │   │  ▸ learningComponentType: practical
-│   │   │   │  ▸ OKx: hierarchieNiveau: leeractiviteit
-│   │   │   │  ▸ OKx: onderwijsSpecificatie:
-│   │   │   │  │    leervorm: simulatie
-│   │   │   │  │    tijdsbesteding: { bot: 80, oot: 40, eenheid: sbu }
-│   │   │   │  │    ruimteType: praktijkruimte_simulatie
-│   │   │   │  │    ruimteEisen: "balie, wachtruimte, kassasysteem"
-│   │   │   │  │    expertiseProfiel: ["rollenspel_training"]
-│   │   │   │  │    leermiddelGroepen: ["simulatie_materiaal"]
-│   │   │   │  │    spreidingspatroon: "2x per week, 8 weken"
-│   │   │   │  ▸ OKx: waardeDocument: microcredential
-│   │   │   │  ▸ OKx: deelnameVereisten: []
+│   │   │   │  ▸ OKx: hierarchyLevel: learning_activity
+│   │   │   │  ▸ OKx: educationSpecification:
+│   │   │   │  │    deliveryForm: simulation
+│   │   │   │  │    timeAllocation: { bot: 80, oot: 40, unit: sbu }
+│   │   │   │  │    roomType: simulation_practice_room
+│   │   │   │  │    roomRequirements: "balie, wachtruimte, kassasysteem"
+│   │   │   │  │    expertiseProfiles: ["roleplay_training"]
+│   │   │   │  │    learningResourceGroups: ["simulation_material"]
+│   │   │   │  │    spreadPattern: "2x per week, 8 weken"
+│   │   │   │  ▸ OKx: credentialDocument: { type: microcredential, register: "edubadges.nl" }
+│   │   │   │  ▸ OKx: participationRequirements: []
 │   │   │   │  ▸ learningOutcomes: ["Voert professionele baliegesprekken"]
 │   │   │   │
 │   │   │   ├── LearningComponent "Les: Gesprek bij emotionele cliënt"
-│   │   │   │     ▸ OKx: hierarchieNiveau: lesopdracht
-│   │   │   │     ▸ OKx: onderwijsSpecificatie:
-│   │   │   │     │    leervorm: simulatie
-│   │   │   │     │    tijdsbesteding: { bot: 20, oot: 10, eenheid: sbu }
-│   │   │   │     │    ruimteType: praktijkruimte_simulatie
-│   │   │   │     │    expertiseProfiel: ["rollenspel_training"]
-│   │   │   │     ▸ OKx: waardeDocument: badge
+│   │   │   │     ▸ OKx: hierarchyLevel: lesson_assignment
+│   │   │   │     ▸ OKx: educationSpecification:
+│   │   │   │     │    deliveryForm: simulation
+│   │   │   │     │    timeAllocation: { bot: 20, oot: 10, unit: sbu }
+│   │   │   │     │    roomType: simulation_practice_room
+│   │   │   │     │    expertiseProfiles: ["roleplay_training"]
+│   │   │   │     ▸ OKx: credentialDocument: { type: badge, register: "edubadges.nl" }
 │   │   │   │     ▸ learningOutcomes: [lesuitkomst: "Herkent en hanteert
 │   │   │   │     │                     emoties in baliegesprek"]
 │   │   │   │
@@ -170,51 +170,52 @@ Programme "Apothekersassistent" (level: mbo-4, studyLoad: 4800 SBU)
 │   │   │
 │   │   ├── LearningComponent "Leeractiviteit: Farmaceutische theorie"
 │   │   │   │  ▸ learningComponentType: lecture
-│   │   │   │  ▸ OKx: onderwijsSpecificatie:
-│   │   │   │  │    leervorm: klassikaal
-│   │   │   │  │    tijdsbesteding: { bot: 40, oot: 40, eenheid: sbu }
-│   │   │   │  │    ruimteType: collegezaal
-│   │   │   │  │    expertiseProfiel: ["farmaceutisch"]
-│   │   │   │  │    leermiddelGroepen: ["digitaal_werkstation", "vakliteratuur"]
-│   │   │   │  ▸ OKx: deelnameVereisten: []
+│   │   │   │  ▸ OKx: educationSpecification:
+│   │   │   │  │    deliveryForm: classroom
+│   │   │   │  │    timeAllocation: { bot: 40, oot: 40, unit: sbu }
+│   │   │   │  │    roomType: lecture_hall
+│   │   │   │  │    expertiseProfiles: ["pharmaceutical"]
+│   │   │   │  │    learningResourceGroups: ["digital_workstation", "professional_literature"]
+│   │   │   │  ▸ OKx: participationRequirements: []
 │   │   │   │  (... geneste lesopdrachten ...)
 │   │   │
 │   │   └── TestComponent "Praktijkexamen baliegesprekken"
 │   │         ▸ testComponentType: life_skills_test
 │   │         ▸ learningOutcomes: [zelfde LO's als bovenliggende course]
-│   │         ▸ OKx: toetsNiveau: summatief
-│   │         ▸ OKx: onderwijsSpecificatie:
-│   │         │    ruimteType: praktijkruimte_simulatie
-│   │         │    expertiseProfiel: ["examinator_farmaceutisch"]
-│   │         │    tijdsbesteding: { bot: 4, eenheid: sbu }
+│   │         ▸ OKx: assessmentLevel: summative
+│   │         ▸ OKx: assessmentScope: { workProcessCodes: ["B1-K1-W1"], learningOutcomeIds: ["<LO-ids>"] }
+│   │         ▸ OKx: educationSpecification:
+│   │         │    roomType: simulation_practice_room
+│   │         │    expertiseProfiles: ["assessor_pharmaceutical"]
+│   │         │    timeAllocation: { bot: 4, unit: sbu }
 │   │
 │   ├── Course "Farmaceutische kennis en medicatieveiligheid" (studyLoad: 360 SBU)
 │   │   └── (... zelfde structuur, andere leervormen/LO's ...)
 │   │
 │   ├── Course "Beroepspraktijkvorming" (studyLoad: 1200 SBU)
-│   │   │  ▸ OKx: onderwijsSpecificatie:
-│   │   │  │    leervorm: werkplekleren
-│   │   │  │    ruimteType: externe_werkplek
-│   │   │  │    expertiseProfiel: ["praktijkbegeleider"]
+│   │   │  ▸ OKx: educationSpecification:
+│   │   │  │    deliveryForm: work_based_learning
+│   │   │  │    roomType: external_workplace
+│   │   │  │    expertiseProfiles: ["practice_supervisor"]
 │   │   │  (gedeeld via programmeIds — hoort ook bij track "Versneld")
 │   │   └── (... stage-activiteiten als LearningComponents ...)
 │   │
 │   └── (... overige courses tot SOM = 4800 SBU ...)
 │
 ├── Programme "Track: Versneld" (programmeType: track)
-│   │  ▸ OKx: leerrouteType: versneld
+│   │  ▸ OKx: learningRouteType: versneld
 │   │  ▸ SOM studyLoad = 3600 SBU (minder SBU door EVC/vrijstellingen)
 │   │  ▸ Deelt courses via programmeIds (N:M)
 │   └── (... subset van courses, evt. gecomprimeerd ...)
 │
 └── Course "Keuzedeel: Digitale vaardigheden" (studyLoad: 240 SBU)
     ▸ programmeIds: [root + beide tracks] (beschikbaar in alle routes)
-    ▸ OKx: waardeDocument: mbo_certificaat
+    ▸ OKx: credentialDocument: { type: mbo_certificaat, register: "DUO" }
 ```
 
 **De aggregatie-invariant:** `SOM(children.studyLoad) = parent.studyLoad` op elk niveau. Dit maakt het mogelijk om vanuit een willekeurig niveau omhoog te aggregeren naar het kwalificatiedossier.
 
-**Kwalificatiedossier-alignment:** De root `Programme` verwijst via `kwalificatieRef` naar het SBB-dossier. De `learningOutcomes` op programmaniveau dekken alle kerntaken/werkprocessen. Per `Course` en `LearningComponent` is traceerbaar welke LO's (en dus welke kerntaken) worden afgedekt.
+**Kwalificatiedossier-alignment:** De root `Programme` verwijst via `qualificationReference` naar het kwalificatiedossier (Crebo/SBB-scheme expliciet). De `learningOutcomes` op programmaniveau dekken alle kerntaken/werkprocessen. Per `Course` en `LearningComponent` is traceerbaar welke LO's (en dus welke kerntaken) worden afgedekt.
 
 ### 4.4 Voorbeeld: LearningOutcome-hiërarchie met CompetentNL-taxonomieën
 
@@ -247,7 +248,7 @@ Het bestaande `LearningOutcome`-schema biedt al aanknopingspunten:
 
 #### OKx-extensie op LearningOutcome voor CompetentNL
 
-Naast de bestaande OKx-attributen (`hierarchieNiveau`, `standaardisatieStatus`, `kwalificatieRef`, `sectorReferentie`) voegen we toe:
+Naast de bestaande OKx-attributen (`hierarchyLevel`, `standardisationStatus`, `qualificationReference`, `sectorReference`) voegen we toe:
 
 | Attribuut | Type | Beschrijving |
 |-----------|------|-------------|
@@ -256,7 +257,7 @@ Naast de bestaande OKx-attributen (`hierarchieNiveau`, `standaardisatieStatus`, 
 
 #### Uitgewerkt voorbeeld: Apothekersassistent (mbo-4)
 
-Hieronder de LearningOutcome-boom voor het voorbeeld uit §4.3. Leeruitkomsten zijn afgeleid van SBB kwalificatiedossier 25391 "Apothekersassistent" en gekoppeld aan CompetentNL vaardigheden en kennisgebieden.
+Hieronder de LearningOutcome-boom voor het voorbeeld uit §4.3. Leeruitkomsten zijn afgeleid van het kwalificatiedossier (Crebo 23450 / kwalificatie 27141) en gekoppeld aan CompetentNL vaardigheden en kennisgebieden.
 
 ```
 LearningOutcome "LO-APOTH-001" (root — summatieve leeruitkomst)
@@ -266,10 +267,12 @@ LearningOutcome "LO-APOTH-001" (root — summatieve leeruitkomst)
 │  │              gezondheidsadvies, rekening houdend met de cliënt-context."
 │  fieldsOfStudy: "0916"  (ISCED-F: Pharmacy)
 │  complexityLevel: bloom_3  (Apply)
-│  ▸ OKx: hierarchieNiveau: leeruitkomst
-│  ▸ OKx: standaardisatieStatus: afgestemd
-│  ▸ OKx: kwalificatieRef:
-│  │    dossier: "25391"
+│  ▸ OKx: hierarchyLevel: learning_outcome
+│  ▸ OKx: standardisationStatus: aligned
+│  ▸ OKx: qualificationReference:
+│  │    scheme: "crebo"
+│  │    dossier: "23450"
+│  │    qualification: "27141"
 │  │    kerntaak: "B1-K1"
 │  │    werkproces: "B1-K1-W1"
 │  ▸ OKx: competentNlRefs:
@@ -308,10 +311,12 @@ LearningOutcome "LO-APOTH-001" (root — summatieve leeruitkomst)
 │  │     │              aan met actief luisteren en empathische bevestiging."
 │  │     fieldsOfStudy: "0916"
 │  │     complexityLevel: bloom_4  (Analyse)
-│  │     ▸ OKx: hierarchieNiveau: lesuitkomst
-│  │     ▸ OKx: standaardisatieStatus: concept
-│  │     ▸ OKx: kwalificatieRef:
-│  │     │    dossier: "25391"
+│  │     ▸ OKx: hierarchyLevel: lesson_outcome
+│  │     ▸ OKx: standardisationStatus: concept
+│  │     ▸ OKx: qualificationReference:
+│  │     │    scheme: "crebo"
+│  │     │    dossier: "23450"
+│  │     │    qualification: "27141"
 │  │     │    kerntaak: "B1-K1"
 │  │     │    werkproces: "B1-K1-W1"
 │  │     ▸ OKx: competentNlRefs:
@@ -335,10 +340,12 @@ LearningOutcome "LO-APOTH-001" (root — summatieve leeruitkomst)
 │  │     │              interacties en bewaarcondities van gangbare medicijnen."
 │  │     fieldsOfStudy: "0916"
 │  │     complexityLevel: bloom_3  (Apply)
-│  │     ▸ OKx: hierarchieNiveau: lesuitkomst
-│  │     ▸ OKx: standaardisatieStatus: concept
-│  │     ▸ OKx: kwalificatieRef:
-│  │     │    dossier: "25391"
+│  │     ▸ OKx: hierarchyLevel: lesson_outcome
+│  │     ▸ OKx: standardisationStatus: concept
+│  │     ▸ OKx: qualificationReference:
+│  │     │    scheme: "crebo"
+│  │     │    dossier: "23450"
+│  │     │    qualification: "27141"
 │  │     │    kerntaak: "B1-K1"
 │  │     │    werkproces: "B1-K1-W2"
 │  │     ▸ OKx: competentNlRefs:
@@ -366,8 +373,8 @@ LearningOutcome "LO-APOTH-001" (root — summatieve leeruitkomst)
 │        │              communicatie en adviesstijl hierop aan."
 │        fieldsOfStudy: "0916"
 │        complexityLevel: bloom_5  (Evaluate)
-│        ▸ OKx: hierarchieNiveau: lesuitkomst
-│        ▸ OKx: standaardisatieStatus: concept
+│        ▸ OKx: hierarchyLevel: lesson_outcome
+│        ▸ OKx: standardisationStatus: concept
 │        ▸ OKx: competentNlRefs:
 │        │    - uri: "cnl:skill/specifiek/interculturele-communicatie"
 │        │      type: vaardigheid_specifiek
@@ -389,10 +396,12 @@ LearningOutcome "LO-APOTH-002" (root — summatieve leeruitkomst)
 │  │              voert kwaliteitscontroles uit en documenteert het bereidingsproces."
 │  fieldsOfStudy: "0916"
 │  complexityLevel: bloom_3  (Apply)
-│  ▸ OKx: hierarchieNiveau: leeruitkomst
-│  ▸ OKx: standaardisatieStatus: afgestemd
-│  ▸ OKx: kwalificatieRef:
-│  │    dossier: "25391"
+│  ▸ OKx: hierarchyLevel: learning_outcome
+│  ▸ OKx: standardisationStatus: aligned
+│  ▸ OKx: qualificationReference:
+│  │    scheme: "crebo"
+│  │    dossier: "23450"
+│  │    qualification: "27141"
 │  │    kerntaak: "B1-K2"
 │  │    werkproces: "B1-K2-W1"
 │  ▸ OKx: competentNlRefs:
@@ -424,7 +433,7 @@ LearningOutcome "LO-APOTH-002" (root — summatieve leeruitkomst)
 │  ├── LearningOutcome "LO-APOTH-002a" (kind — formatieve lesuitkomst)
 │  │     name: "Weegt en meet grondstoffen conform voorschrift"
 │  │     complexityLevel: bloom_3
-│  │     ▸ OKx: hierarchieNiveau: lesuitkomst
+│  │     ▸ OKx: hierarchyLevel: lesson_outcome
 │  │     ▸ OKx: competentNlRefs:
 │  │     │    - uri: "cnl:skill/specifiek/nauwkeurig-werken"
 │  │     │      type: vaardigheid_specifiek
@@ -438,7 +447,7 @@ LearningOutcome "LO-APOTH-002" (root — summatieve leeruitkomst)
 │  ├── LearningOutcome "LO-APOTH-002b" (kind — formatieve lesuitkomst)
 │  │     name: "Voert eindcontrole uit op bereid product"
 │  │     complexityLevel: bloom_5  (Evaluate)
-│  │     ▸ OKx: hierarchieNiveau: lesuitkomst
+│  │     ▸ OKx: hierarchyLevel: lesson_outcome
 │  │     ▸ OKx: competentNlRefs:
 │  │     │    - uri: "cnl:skill/specifiek/kwaliteitscontrole"
 │  │     │      type: vaardigheid_specifiek
@@ -452,7 +461,7 @@ LearningOutcome "LO-APOTH-002" (root — summatieve leeruitkomst)
 │  └── LearningOutcome "LO-APOTH-002c" (kind — formatieve lesuitkomst)
 │        name: "Documenteert bereidingsproces in apotheekinformatiesysteem"
 │        complexityLevel: bloom_3
-│        ▸ OKx: hierarchieNiveau: lesuitkomst
+│        ▸ OKx: hierarchyLevel: lesson_outcome
 │        ▸ OKx: competentNlRefs:
 │        │    - uri: "cnl:skill/specifiek/documenteren"
 │        │      type: vaardigheid_specifiek
@@ -470,10 +479,12 @@ LearningOutcome "LO-APOTH-003" (root — summatieve leeruitkomst)
 │  │              veiligheidsprotocollen en wet- en regelgeving."
 │  fieldsOfStudy: "0913"  (ISCED-F: Nursing and caring)
 │  complexityLevel: bloom_5  (Evaluate)
-│  ▸ OKx: hierarchieNiveau: leeruitkomst
-│  ▸ OKx: standaardisatieStatus: afgestemd
-│  ▸ OKx: kwalificatieRef:
-│  │    dossier: "25391"
+│  ▸ OKx: hierarchyLevel: learning_outcome
+│  ▸ OKx: standardisationStatus: aligned
+│  ▸ OKx: qualificationReference:
+│  │    scheme: "crebo"
+│  │    dossier: "23450"
+│  │    qualification: "27141"
 │  │    kerntaak: "B1-K3"
 │  │    werkproces: "B1-K3-W1"
 │  ▸ OKx: competentNlRefs:
@@ -552,7 +563,7 @@ De Npuls-leerroutes (1-9) zijn allemaal expresseerbaar in het OEAPI-datamodel me
 
 **Onderwijsontwerper (top-down)**
 - Ontwerpt `Programme "Apothekersassistent"` met `curriculumType: nominaal`.
-- Vertaalt kwalificatiedossier SBB 25391 naar `LearningOutcome`-hiërarchie.
+- Vertaalt kwalificatiedossier (Crebo 23450 / kwalificatie 27141) naar `LearningOutcome`-hiërarchie.
 - Maakt per kerntaak een of meer `Courses` met vaste `LearningComponents` (leeractiviteiten).
 - Specificeert per component: leervorm (simulatie/klassikaal/werkplek), BOT/OOT, ruimtetype, expertiseprofiel, leermiddelen.
 - Publiceert naar OC → alles staat klaar.
@@ -603,7 +614,7 @@ De Npuls-leerroutes (1-9) zijn allemaal expresseerbaar in het OEAPI-datamodel me
 **Planner**
 - Ziet dat `Course "Pedagogiek"` bij twee programmes hoort.
 - Kan één `CourseOffering` plannen voor studenten uit beide opleidingen.
-- Onderwijsspecificatie is identiek → zelfde ruimte, docent, leermiddelen.
+- Education specification is identiek → zelfde roomType, expertiseProfiles, learningResourceGroups.
 
 **Student (Kyra)**
 - SKS toont overlap: *"Deze 5 courses tellen voor beide diplomas."*
@@ -619,14 +630,14 @@ De Npuls-leerroutes (1-9) zijn allemaal expresseerbaar in het OEAPI-datamodel me
 **Cross-instelling interoperabiliteit — waarom de standaard nodig is**
 
 - Universiteit B publiceert `Course "Data Science Fundamentals"` in haar OC, met OKx-profiel:
-  - `learningOutcomes`, `onderwijsSpecificatie` (leervorm, BOT/OOT, ruimtetype, etc.)
+  - `learningOutcomes`, `educationSpecification` (deliveryForm, BOT/OOT, roomType, etc.)
   - `studyLoad: 5 ECTS`
-  - `waardeDocument: microcredential`
+  - `credentialDocument: microcredential`
 - Universiteit A ontvangt dit via **Sector Edubroker** of directe OEAPI-koppeling.
 - **Omdat beide instellingen hetzelfde profiel gebruiken**, kan universiteit A:
   - De `learningOutcomes` matchen met haar eigen kwalificatie-eisen.
   - De `studyLoad` optellen in Macca's totaal.
-  - De `onderwijsSpecificatie` tonen aan Macca (leervorm, locatie, etc.).
+  - De `educationSpecification` tonen aan Macca (deliveryForm, locatie, etc.).
 
 **Planner (universiteit B)**
 - Plant de offering op basis van eigen onderwijsspecificatie.
@@ -644,8 +655,8 @@ De Npuls-leerroutes (1-9) zijn allemaal expresseerbaar in het OEAPI-datamodel me
 > *Sinead volgt losse modules voor bijscholing (vrije keuze). Chen bundelt modules uit mbo-opleidingen rond energietransitie (bundelen). Michelle stapelt modules richting diploma (stapelen).*
 
 **Onderwijsontwerper**
-- Publiceert `Courses` als **zelfstandige eenheden** met `keuzeMogelijk: true`.
-- Elke course heeft eigen `learningOutcomes`, `onderwijsSpecificatie` en `waardeDocument: microcredential`.
+- Publiceert `Courses` als **zelfstandige eenheden** met `choiceAvailable: true`.
+- Elke course heeft eigen `learningOutcomes`, `educationSpecification` en `credentialDocument: microcredential`.
 - Courses kunnen los gevolgd worden — geen verplichte `Programme`-parent.
 
 **Bottom-up aggregatie (de student bouwt zelf)**
@@ -674,43 +685,63 @@ Michelle stapelt modules:
 
 **Planner**
 - Ziet per `CourseOffering`: aanmeldingen van zowel reguliere studenten als modulaire studenten.
-- Onderwijsspecificatie is identiek ongeacht hoe de student er komt — dezelfde leervorm, ruimte, docent.
+- Education specification is identiek ongeacht hoe de student er komt — dezelfde delivery form, roomType en expertise.
 - Kan `minimaalAantalDeelnemers` hanteren voor go/no-go.
 
 ---
 
-## 6. Het onderwijsSpecificatie-object (fase 1 — kern)
+## 6. Het educationSpecification-object (fase 1 — kern)
 
 Het informatiemodel Onderwijsontwerp in ArchiMate toont dat op elk niveau niet alleen *wat* maar ook *hoe*, *waarmee*, *door wie*, *waar* en *hoe lang* wordt vastgelegd. Dit vertaalt zich naar een gestructureerd consumer-extensie-object.
 
-### 6.1 Structuur `onderwijsSpecificatie`
+### 6.0 Naamgeving (canonical)
+
+OEAPI is een UK-English standaard. In dit project request gebruiken we daarom **canonical UK-English veldnamen** voor OKx-extensies. Nederlandse termen kunnen in proza voorkomen, maar zijn **niet normatief**.
+
+| NL in eerdere drafts | Canonical (OKx-extensie) |
+|---|---|
+| `onderwijsSpecificatie` | `educationSpecification` |
+| `leervorm` | `deliveryForm` |
+| `tijdsbesteding` | `timeAllocation` |
+| `ruimteType` | `roomType` |
+| `ruimteEisen` | `roomRequirements` |
+| `expertiseProfiel(en)` | `expertiseProfiles` |
+| `leermiddelGroepen` | `learningResourceGroups` |
+| `waardeDocument` | `credentialDocument` |
+| `kwalificatieRef` | `qualificationReference` |
+| `leerrouteType` | `learningRouteType` |
+| `keuzeMogelijk` | `choiceAvailable` |
+| `deelnameVereisten` | `participationRequirements` |
+| `hierarchieNiveau` | `hierarchyLevel` |
+| `toetsNiveau` | `assessmentLevel` |
+| `standaardisatieStatus` | `standardisationStatus` |
+| `sectorReferentie` | `sectorReference` |
+
+### 6.1 Structuur `educationSpecification`
 
 Toepasbaar op `LearningComponent`, `Course` en `TestComponent`. Op hogere niveaus (Course, Programme) beschrijft het het overkoepelende kader; op lagere niveaus (LearningComponent) de concrete specificatie.
 
 ```yaml
-onderwijsSpecificatie:
-  leervorm:
-    type: string enum         # simulatie, klassikaal, werkplekleren,
-                              # projectonderwijs, zelfstudie_begeleid,
-                              # stage, onderzoek, co_teaching, blended
-    strategie: string         # optioneel: overkoepelende didactische
-                              # strategie (bijv. "4CID", "probleemgestuurd")
-  tijdsbesteding:
-    bot: number               # begeleid onderwijs tijd (SBU of uren)
+educationSpecification:
+  deliveryForm:
+    type: string enum         # simulation, classroom, work_based_learning,
+                              # project_based_education, guided_self_study,
+                              # internship, research, co_teaching, blended
+    strategy: string          # optioneel: didactische strategie (bijv. "4CID")
+  timeAllocation:
+    bot: number               # begeleid onderwijs tijd (SBU/EC/uur)
     oot: number               # onbegeleid onderwijs tijd
-    eenheid: string enum      # sbu, ects, uur
-    spreidingspatroon: string # "2x per week, 8 weken" / "doorlopend"
-  ruimteType: string enum     # praktijkruimte_simulatie, collegezaal,
-                              # werkplaats, lab, online, externe_werkplek,
-                              # examenzaal, hybride
-  ruimteEisen: string         # vrije specificatie: "balie, wachtruimte"
-  expertiseProfielen:
-    - profiel: string         # competentie-aanduiding
-                              # bijv. "rollenspel_training", "farmaceutisch"
-  leermiddelGroepen:
-    - groep: string           # "digitaal_werkstation", "vakliteratuur",
-                              # "simulatie_materiaal", "gereedschap"
-      specificatie: string    # "Chromebook + MS Word licentie"
+    unit: string enum         # sbu, ects, hour
+    spreadPattern: string     # "2x per week, 8 weken" / "doorlopend"
+  roomType: string enum       # simulation_practice_room, lecture_hall, online,
+                              # external_workplace, exam_hall, hybrid
+  roomRequirements: string    # vrije specificatie: "balie, wachtruimte"
+  expertiseProfiles:
+    - profile: string         # bijv. "roleplay_training", "pharmaceutical"
+  learningResourceGroups:
+    - group: string           # "digital_workstation", "professional_literature",
+                              # "simulation_material", "tools"
+      specification: string   # "Chromebook + MS Word licentie"
 ```
 
 ### 6.2 Aanvullende OKx-extensies per entiteit
@@ -721,48 +752,49 @@ onderwijsSpecificatie:
 |-----------|------|-------------|
 | `curriculumType` | enum: `nominaal`, `flexibel`, `hybride` | Structuurtype. Bepaalt of tracks vast zijn of student vrij combineert. |
 | `keuzegateType` | enum: `nominaal`, `maatwerk`, `continu` | Keuzemoment. `continu` = reversibele overgang (ADR 0012). |
-| `leerrouteType` | enum: `regulier`, `versneld`, `temporiserend`, `personalisatie_intra`, `personalisatie_sector`, `personalisatie_cross_sector`, `vrije_keuze`, `bundelen`, `stapelen` | Npuls leerroute-classificatie (1-9). |
-| `waardeDocument` | object: `{ type: enum, register: string }` | Credential bij afronding. `type`: `diploma`, `certificaat`, `mbo_certificaat`, `deelkwalificatie`, `microcredential`. `register`: bijv. "DUO", "edubadges.nl". |
-| `kwalificatieRef` | object: `{ dossier: string, kwalificatie: string, kerntaak: string }` | Referentie naar SBB kwalificatiedossier. `dossier` = dossiernummer, `kwalificatie` = kwalificatienummer, `kerntaak` = optioneel specifieke kerntaak. |
-| `leeruitkomstDekking` | enum: `volledig`, `gedeeltelijk`, `ontbreekt` | Mate waarin LO's gekoppeld zijn aan courses/components. |
-| `onderwijsSpecificatie` | object (zie §6.1) | Overkoepelend specificatiekader op programmaniveau. |
+| `learningRouteType` | enum: `regulier`, `versneld`, `temporiserend`, `personalisatie_intra`, `personalisatie_sector`, `personalisatie_cross_sector`, `vrije_keuze`, `bundelen`, `stapelen` | Npuls leerroute-classificatie (1-9). |
+| `credentialDocument` | object: `{ type: enum, register: string }` | Credential bij afronding. `type`: `diploma`, `certificaat`, `mbo_certificaat`, `deelkwalificatie`, `microcredential`. `register`: bijv. "DUO", "edubadges.nl". |
+| `qualificationReference` | object | Referentie naar kwalificatiekader (minimaal: scheme+dossier+qualification; optioneel: coreTask/workProcess). |
+| `learningOutcomeCoverage` | enum: `full`, `partial`, `missing` | Mate waarin LO's gekoppeld zijn aan courses/components. |
+| `educationSpecification` | object (zie §6.1) | Overkoepelend specificatiekader op programmaniveau. |
 
 **Course** (`consumerKey: "okx"`)
 
 | Attribuut | Type | Beschrijving |
 |-----------|------|-------------|
-| `onderwijsSpecificatie` | object (zie §6.1) | Specificatie op cursusniveau: leervorm, tijdsbesteding, ruimte, expertise, leermiddelen. |
-| `waardeDocument` | object: `{ type, register }` | Credential: `microcredential`, `certificaat`, `mbo_certificaat`, `badge`. |
-| `keuzeMogelijk` | boolean | Kan onderdeel zijn van een maatwerk-leerroute. |
-| `deelnameVereisten` | array of `{ courseId: UUID, type: "afgerond" \| "gelijktijdig" }` | Volgordelijkheid. Welke courses eerst afgerond moeten zijn. |
-| `kwalificatieRef` | object | Optioneel: mapping naar specifieke kerntaak/werkproces in het dossier. |
+| `educationSpecification` | object (zie §6.1) | Specificatie op cursusniveau: deliveryForm, timeAllocation, roomType, expertiseProfiles, learningResourceGroups. |
+| `credentialDocument` | object: `{ type, register }` | Credential: `microcredential`, `certificaat`, `mbo_certificaat`, `badge`. |
+| `choiceAvailable` | boolean | Kan onderdeel zijn van een maatwerk-leerroute. |
+| `participationRequirements` | array of `{ courseId: UUID, type: "completed" \| "concurrent" }` | Volgordelijkheid. Welke courses eerst afgerond moeten zijn. |
+| `qualificationReference` | object | Optioneel: mapping naar coreTask/workProcess. |
 
 **LearningComponent** (`consumerKey: "okx"`)
 
 | Attribuut | Type | Beschrijving |
 |-----------|------|-------------|
-| `hierarchieNiveau` | enum: `leeractiviteit`, `lesopdracht` | Positie in OKx-hiërarchie. |
-| `onderwijsSpecificatie` | object (zie §6.1) | Concrete specificatie: leervorm, BOT/OOT, ruimtetype + eisen, expertiseprofiel, leermiddelen, spreidingspatroon. |
-| `waardeDocument` | object: `{ type, register }` | `microcredential`, `badge`, of `null`. |
-| `componentStudyLoad` | object: `{ bot: number, oot: number, eenheid: enum }` | SBU/ECTS op componentniveau. Splitsing BOT/OOT. |
-| `deelnameVereisten` | array of `{ learningComponentId: UUID, type: enum }` | Prerequisites tussen componenten. |
+| `hierarchyLevel` | enum: `learning_activity`, `lesson_assignment` | Positie in OKx-hiërarchie. |
+| `educationSpecification` | object (zie §6.1) | Concrete specificatie: deliveryForm, BOT/OOT, roomType + requirements, expertiseProfiles, learningResourceGroups, spreadPattern. |
+| `credentialDocument` | object: `{ type, register }` | `microcredential`, `badge`, of `null`. |
+| `componentStudyLoad` | object: `{ bot: number, oot: number, unit: enum }` | SBU/ECTS op componentniveau. Splitsing BOT/OOT. |
+| `participationRequirements` | array of `{ learningComponentId: UUID, type: enum }` | Prerequisites tussen componenten. |
 
 **TestComponent** (`consumerKey: "okx"`)
 
 | Attribuut | Type | Beschrijving |
 |-----------|------|-------------|
-| `toetsNiveau` | enum: `formatief`, `summatief` | Summatief = geldend voor diploma, gekoppeld aan opleidingsonderdeel/kwalificatie. |
-| `onderwijsSpecificatie` | object (subset: ruimteType, expertiseProfiel, tijdsbesteding) | Wat nodig is om de toets af te nemen. |
-| `kwalificatieRef` | object | Mapping naar kerntaak/werkproces die geëxamineerd wordt. |
+| `assessmentLevel` | enum: `formative`, `summative` | Summatief = geldend voor diploma, gekoppeld aan werkproces/LO-set. |
+| `educationSpecification` | object (subset: roomType, expertiseProfiles, timeAllocation) | Wat nodig is om de toets af te nemen. |
+| `qualificationReference` | object | Mapping naar coreTask/workProcess die geëxamineerd wordt. |
+| `assessmentScope` | object | Scope van toetsing: `learningOutcomeIds` en/of `workProcessCodes` (zie §12.0 toetsrij). |
 
 **LearningOutcome** (`consumerKey: "okx"`)
 
 | Attribuut | Type | Beschrijving |
 |-----------|------|-------------|
-| `hierarchieNiveau` | enum: `leeruitkomst`, `lesuitkomst` | Positie in LO-hiërarchie. |
-| `standaardisatieStatus` | enum: `concept`, `afgestemd`, `vastgesteld`, `verouderd` | Status sectorale standaardisatie. |
-| `kwalificatieRef` | object: `{ dossier, kerntaak, werkproces }` | Traceerbaarheid naar SBB-kwalificatiedossier. |
-| `sectorReferentie` | string | Referentie naar sectoraal register. |
+| `hierarchyLevel` | enum: `learning_outcome`, `lesson_outcome` | Positie in LO-hiërarchie. |
+| `standardisationStatus` | enum: `concept`, `aligned`, `established`, `deprecated` | Status sectorale standaardisatie. |
+| `qualificationReference` | object | Traceerbaarheid naar kwalificatiekader en (optioneel) coreTask/workProcess. |
+| `sectorReference` | string | Referentie naar sectoraal register. |
 | `competentNlRefs` | array of `{ uri: string, type: enum, label: string }` | Referenties naar [CompetentNL](https://competentnl.nl) vaardigheden en kennisgebieden. `type`: `vaardigheid_algemeen`, `vaardigheid_generiek`, `vaardigheid_specifiek`, `kennisgebied`. `uri`: Linked Data URI. Zie §4.4 voor voorbeelden. |
 | `competentNlRelatieType` | enum: `primair`, `ondersteunend` | Geeft aan of deze LO primair of ondersteunend is voor het gekoppelde CompetentNL-concept. |
 
@@ -775,21 +807,21 @@ onderwijsSpecificatie:
 Als instelling A een `Course` publiceert met OKx-profiel, moet instelling B deze kunnen:
 
 1. **Ontvangen** — via Sector Edubroker of directe OEAPI-koppeling
-2. **Begrijpen** — dankzij gestandaardiseerde `onderwijsSpecificatie`, `learningOutcomes` en `kwalificatieRef`
+2. **Begrijpen** — dankzij gestandaardiseerde `educationSpecification`, `learningOutcomes` en `qualificationReference`
 3. **Matchen** — `learningOutcomes` van course B matchen met kwalificatie-eisen van programme A
-4. **Inplannen** — `onderwijsSpecificatie` vertelt welke resources nodig zijn
-5. **Erkennen** — `waardeDocument` en `learningOutcomes` maken erkenning/vrijstelling mogelijk
+4. **Inplannen** — `educationSpecification` vertelt welke resources nodig zijn
+5. **Erkennen** — `credentialDocument` en `learningOutcomes` maken erkenning/vrijstelling mogelijk
 
 ### Wat gestandaardiseerd moet zijn per entiteit
 
 | Aspect | Waarom standaard | Voorbeeld |
 |--------|-----------------|-----------|
-| `learningOutcomes` met `kwalificatieRef` | Anders kan B niet matchen met eigen kwalificatie | LO "Voert professionele baliegesprekken" → SBB B1-K1-W1 |
-| `onderwijsSpecificatie.leervorm` | Instelling B moet weten of het werkplekleren of klassikaal is | Relevant voor planning en studentverwachting |
-| `onderwijsSpecificatie.tijdsbesteding` (BOT/OOT) | Instelling B moet weten hoeveel contacttijd nodig is | Relevant voor inpassing in eigen rooster |
+| `learningOutcomes` met `qualificationReference` | Anders kan B niet matchen met eigen kwalificatie | LO "Voert professionele baliegesprekken" → werkproces `B1-K1-W1` |
+| `educationSpecification.deliveryForm` | Instelling B moet weten of het werkplekleren of klassikaal is | Relevant voor planning en studentverwachting |
+| `educationSpecification.timeAllocation` (BOT/OOT) | Instelling B moet weten hoeveel contacttijd nodig is | Relevant voor inpassing in eigen rooster |
 | `studyLoad` in gedeelde eenheid | Optelbaarheid cross-instelling | ECTS (hbo) of SBU (mbo) |
-| `waardeDocument` | Erkenning van wat de student elders heeft behaald | Microcredential van B telt mee bij A |
-| `deelnameVereisten` | Instelling B moet weten of student kwalificeert | "Eerst course X afgerond" |
+| `credentialDocument` | Erkenning van wat de student elders heeft behaald | Microcredential van B telt mee bij A |
+| `participationRequirements` | Instelling B moet weten of student kwalificeert | "Eerst course X afgerond" |
 
 ### Wat instelling-specifiek mag blijven
 
@@ -820,7 +852,7 @@ Als instelling A een `Course` publiceert met OKx-profiel, moet instelling B deze
 
 **Doel:** Planningssysteem gebruikt onderwijsspecificatie om haalbaarheid te berekenen. Terugkoppeling naar OC.
 
-**Aanvullende extensies:** `planningHorizon`, `minimaalAantalDeelnemers`, `parallelGroepen`, `cohortGrootte`, `doorlooptijdWeken`. De `onderwijsSpecificatie` (leervorm, BOT/OOT, ruimtetype, expertiseprofiel, leermiddelen) uit fase 1 is hier direct bruikbaar — geen aparte planning-extensies nodig voor de kernvraag "kan de instelling dit realiseren?".
+**Aanvullende extensies:** `planningHorizon`, `minimaalAantalDeelnemers`, `parallelGroepen`, `cohortGrootte`, `doorlooptijdWeken`. De `educationSpecification` (deliveryForm, BOT/OOT, roomType, expertiseProfiles, learningResourceGroups) uit fase 1 is hier direct bruikbaar — geen aparte planning-extensies nodig voor de kernvraag "kan de instelling dit realiseren?".
 
 ---
 
@@ -829,11 +861,12 @@ Als instelling A een `Course` publiceert met OKx-profiel, moet instelling B deze
 | # | Probleem | Impact | Workaround | Aanbeveling |
 |---|---------|--------|-----------|-------------|
 | 1 | `studyLoad` ontbreekt op `LearningComponent`/`TestComponent` | BOT/OOT per component alleen via extensie; niet interoperabel | `componentStudyLoad` als OKx-extensie | OEAPI change request: `studyLoad` op alle entiteiten |
-| 2 | `modesOfDelivery` te grof voor OKx-leervormen | Simulatie, werkplekleren, projectonderwijs niet expresseerbaar | `onderwijsSpecificatie.leervorm` als extensie | Uitbreiden `x-ooapi-extensible-enum` met OKx-waarden |
-| 3 | Geen prerequisite-mechanisme | Volgordelijkheid niet uitdrukbaar in kern | `deelnameVereisten` als extensie | OEAPI change request: `prerequisiteIds` op `Course`/`LearningComponent` |
-| 4 | Geen credential/waardedocument-veld | Niet duidelijk welk bewijs bij afronding hoort | `waardeDocument` als extensie | Evalueer OEAPI-uitbreiding |
+| 2 | `modesOfDelivery` te grof voor OKx-leervormen | Simulatie, werkplekleren, projectonderwijs niet expresseerbaar | `educationSpecification.deliveryForm` als extensie | Uitbreiden `x-ooapi-extensible-enum` met OKx-waarden |
+| 3 | Geen prerequisite-mechanisme | Volgordelijkheid niet uitdrukbaar in kern | `participationRequirements` als extensie | OEAPI change request: `prerequisiteIds` op `Course`/`LearningComponent` |
+| 4 | Geen credential/waardedocument-veld | Niet duidelijk welk bewijs bij afronding hoort | `credentialDocument` als extensie | Evalueer OEAPI-uitbreiding |
 | 5 | Keuze/plaatsingsobject ontbreekt | SKS ↔ SVS interactie buiten OEAPI | Separaat koppelvlak | OKx-koppelvlakspecificatie voor SKS ↔ SVS |
 | 6 | Fijnmazige roostering (recurrence) ontbreekt | Geen "elke dinsdag 10-12" | Basiskenmerken via extensie | Aansluiting iCal/RFC 5545 onderzoeken |
+| 7 | `RequestForOffering` ontbreekt in OEAPI-kern | Vraag-gestuurd aanbod (student/cohort) kan niet uniform worden ingediend of gevolgd | Eigen OKx-koppelvlak voor request/response | OEAPI change request: `RequestForOffering` workflow-object (request → planning decision → offering created/declined) |
 
 ---
 
@@ -841,10 +874,10 @@ Als instelling A een `Course` publiceert met OKx-profiel, moet instelling B deze
 
 | # | Keuze | Toelichting | Alternatief |
 |---|-------|-------------|-------------|
-| 1 | **`onderwijsSpecificatie` als gestructureerd object** | Eén consistent object op elk niveau. Planner, student en LMS halen er elk uit wat ze nodig hebben. | Losse attributen per concern (ruimte apart, docent apart, leermiddel apart) — verliest samenhang. |
+| 1 | **`educationSpecification` als gestructureerd object** | Eén consistent object op elk niveau. Planner, student en LMS halen er elk uit wat ze nodig hebben. | Losse attributen per concern (ruimte apart, docent apart, leermiddel apart) — verliest samenhang. |
 | 2 | **Bottom-up aggregatie als invariant** | `SOM(children) = parent` op elk niveau. Maakt cross-instelling erkenning en modulair studeren mogelijk. | Geen aggregatie-eis — verliest controleerbaarheid. |
-| 3 | **`waardeDocument` per niveau** | Maakt de credentialing-cascade (badge → microcredential → certificaat → diploma) expliciet en gestandaardiseerd. | Alleen op programmaniveau — mist de bottom-up motivatie. |
-| 4 | **`kwalificatieRef` op elk niveau** | Traceert van lesopdracht tot kwalificatiedossier. Essentieel voor summatieve toetsing en cross-instelling erkenning. | Alleen op programmaniveau — verliest granulaire alignment. |
+| 3 | **`credentialDocument` per niveau** | Maakt de credentialing-cascade (badge → microcredential → certificaat → diploma) expliciet en gestandaardiseerd. | Alleen op programmaniveau — mist de bottom-up motivatie. |
+| 4 | **`qualificationReference` op elk niveau** | Traceert van lesopdracht tot kwalificatiedossier. Essentieel voor summatieve toetsing en cross-instelling erkenning. | Alleen op programmaniveau — verliest granulaire alignment. |
 | 5 | **Alle 9 Npuls-leerroutes via `leerrouteType`** | Expliciet classificeren maakt het mogelijk om in SKS op leerroute-type te filteren. | Afleiden uit structuur — niet eenduidig. |
 | 6 | **BOT/OOT-splitsing in `tijdsbesteding`** | Cruciaal voor planning: BOT = docent + ruimte nodig, OOT = zelfstandig. | Alleen totaal SBU — planner kan niet berekenen wat nodig is. |
 | 7 | **Cross-instelling door gedeeld profiel** | Eén `consumerKey: "okx"` met gestandaardiseerde semantiek. Instelling B kan aanbod van A begrijpen, matchen en inplannen. | Bilaterale afspraken — niet schaalbaar. |
@@ -873,98 +906,303 @@ Vanuit de procesanalyse en het ArchiMate-model (`meta/architecture/model/model.a
 
 **Het centrale OKx-inzicht**: het OKx-profiel verrijkt **stadium 1 (Specificatie)** zwaar met een `educationSpecification`-object dat de planner vertelt *wat nodig is* om dit aanbod te kunnen realiseren. **Stadium 2 (Aanbod)** wordt grotendeels door OEAPI-kernvelden gedragen en wordt aangevuld met capaciteits-/cohortinformatie (`cohortSize`, `parallelGroups`). **Stadium 3 (Inschrijving)** zit volledig in OEAPI-kern en hoeft geen OKx-uitbreiding.
 
-### 12.1 Bedrijfslaag — onderwijskundige ontwerptaal
+### 12.0 Vlaks-informatiemodel (6 kolommen × 6 rijen + toetsrij)
 
-De ArchiMate-businessobjecten weerspiegelen de **onderwijskundige werkelijkheid** zoals docenten, ontwerpers en kwaliteitszorg die hanteren. Ze zijn in MORA-stijl genoemd en sluiten aan bij SBB-kwalificatiedossiers (mbo) en CROHO/HBO-formuleringen.
+Dit model verduidelijkt de onderliggende **informatiestapeling** die we in OKx overal gebruiken. Je kunt het lezen als: *per kwalificatiekader-niveau (rij) hebben we een beoogde uitkomst, een specificatie, een aanbod-instantie, een verbintenis (association) en uiteindelijk een resultaat*.
+
+#### 12.0.1 Kolommen (objectfamilies)
+
+| Kolom | Betekenis | OEAPI-haak |
+|-------|-----------|------------|
+| **Kwalificatiekader** | Normatief kader uit SBB/CROHO dat bepaalt *wat* geldig is | `qualificationReference` (OKx) + `levelOfQualification`, `fieldsOfStudy` |
+| **Beoogde leeruitkomst** | Inhoudelijke uitkomsten die *gedekt moeten worden* op dit niveau | `LearningOutcome` (OEAPI) + OKx `hierarchyLevel` |
+| **Onderwijsspecificatie** | Ontwerp-/sjabloonvorm: *wat gaan we organiseren* | `Programme` / `Course` / `LearningComponent` / `TestComponent` + OKx `educationSpecification` |
+| **Onderwijsaanbod** | Concrete instantie in tijd/capaciteit | `*Offering` + `OfferingProperties` |
+| **Onderwijsverbintenis** | Relatie student ↔ aanbod (intekening/inschrijving) | `Association` + `AssociationProperties` |
+| **Onderwijsresultaat** | Resultaat/aanwezigheid/afronding op die verbintenis | `Association.state` + result-attributen op Offering (OEAPI) |
+
+Allignment met klus 53 Alignment MORA <> HORA MBO digitaal Architectuurberaad, en ROSA terminologie.
+
+#### 12.0.2 Rijen (kwalificatiekader-niveaus)
+
+| Kwalificatiekader | Beoogde leeruitkomst | Onderwijsspecificatie | Onderwijsaanbod | Onderwijsverbintenis | Onderwijsresultaat |
+|-------------------|----------------------|------------------------|-----------------|----------------------|--------------------|
+| `Kwalificatiedossier` | *n.v.t. op dit niveau* | `Opleidingsspecificatie` | `Opleidingsaanbod` | `Opleidingsverbintenis` | `Opleidingsresultaat` |
+| `Kwalificatie` | *n.v.t. op dit niveau* | `Opleidingsprogramma specificatie` | `Opleidingsprogramma aanbod` | `Opleidingsprogramma verbintenis` | `Opleidingsprogramma resultaat` |
+| `Kerntaak` | **Collectie van collecties van leeruitkomsten** (werkproces heeft meerdere leeruitkomsten, een kerntaak heeft meerdere werkprocessen, dus is een lijst, met lijsten van leeruitkomsten. | `Onderwijseenheid specificatie` | `Onderwijseenheid aanbod` | `Onderwijseenheid verbintenis` | `Onderwijseenheid resultaat` |
+| `Werkproces` | **Collectie leeruitkomsten** / collectie van een collectie van lesuitkomsten (bottom up) | `Leeronderdeel specificatie` | **Leergelegenheid** = `LearningComponentOffering` waar `LearningComponent.consumer.okx.hierarchyLevel = learning_activity` | `Association` op `LearningComponentOffering` | `Association.state` (+ evt. resultaat-koppelvlak) |
+| *n.v.t. kwalificatiekader* | `Lesdoel / Lesuitkomst` | `Lesspecificatie` | **Lesgelegenheid** = `LearningComponentOffering` waar `LearningComponent.consumer.okx.hierarchyLevel = lesson_assignment` | `Association` op `LearningComponentOffering` | `Association.state` (+ evt. aanwezigheid/resultaat) |
+| Summatief: vaststelling Examencommissie t.o.v. leeruitkomsten / formatief: Instellingsbeleid | `Lesuitkomst`/set, `Leeruitkomst`/set, `Werkproces`/set, … (scope van toetsing) | `Toetsonderdeel specificatie` | `Toetsgelegenheid` | `Toetsgelegenheid verbintenis` | `Toetsresultaat / Aanwezigheid` |
+
+**Cardinaliteit (normatief voor dit profiel):**
+
+- `CoreTask (1..*) WorkProcess`
+- `WorkProcess (1..*) LearningOutcome` (summatief)
+- `LearningOutcome (0..*) Course` / `LearningComponent` / `TestComponent` (dezelfde LO kan over meerdere onderdelen verdeeld zijn; onderdelen kunnen meerdere LO’s dekken)
+- `LearningOutcome (0..*) LessonOutcome` (formatief; DAG-structuur)
+
+#### 12.0.3 Mermaid ERD — vlaks-informatiemodel
 
 ```mermaid
-flowchart TB
-    subgraph Kwalificatie["Kwalificatiekader (extern, top-down bron)"]
-        KD["Kwalificatiedossier (SBB)"]
-        KT["Kerntaak"]
-        WP["Werkproces"]
-    end
-    subgraph Programma["Programma-laag"]
-        PS["ProgrammaSpecificatie"]
-        PR["Programmaregelement"]
-    end
-    subgraph Eenheid["Onderwijseenheid-laag"]
-        OOS["Opleidingsonderdeelspecificatie"]
-        TVS["Toetsvormspecificatie"]
-        ES["Examenspecificatie"]
-    end
-    subgraph Leer["Leer-/lesonderdeel-laag"]
-        LOS["Leeronderdeelspecificatie / Leeractiviteit"]
-        LP["Lesplan"]
-        LT["Theoretische / BPV / Zelfstudie-leertaak"]
-        LAR["Leeractiviteitregelement"]
-    end
-    subgraph Uitkomsten["Uitkomsten en context"]
-        LU["LeeruitkomstSpecificatie (summatief)"]
-        LesU["LesuitkomstSpecificatie (formatief)"]
-        OVS["Onderwijsvormspecificatie / Leervormspecificatie"]
-        LMS_spec["LesmateriaalSpecificaties"]
-    end
-    KD --> KT --> WP
-    KT -.realiseert.-> PS
-    PS --> OOS
-    OOS --> LOS
-    LOS --> LP
-    LOS --> LT
-    OOS --> TVS --> ES
-    PS -.dekt.-> LU
-    OOS -.dekt.-> LU
-    LOS -.dekt.-> LU
-    LP -.dekt.-> LesU
-    LU -.parent.-> LesU
-    LOS --- OVS
-    LOS --- LMS_spec
+erDiagram
+    %% ===== Kader (SBB/CROHO) =====
+    QUALIFICATION_DOSSIER ||--|{ QUALIFICATION : contains
+    QUALIFICATION ||--|{ CORE_TASK : includes
+    CORE_TASK ||--|{ WORK_PROCESS : consists_of
+
+    %% ===== Beoogde leeruitkomsten =====
+    WORK_PROCESS ||--|{ LEARNING_OUTCOME : requires
+    LEARNING_OUTCOME ||--o{ LESSON_OUTCOME : decomposes_into
+
+    %% ===== Onderwijsspecificatie (sjabloon/ontwerp) =====
+    PROGRAMME_SPEC ||--|{ PROGRAMME_SPEC_TRACK : has_track
+    PROGRAMME_SPEC ||--|{ COURSE_SPEC : includes_course
+    COURSE_SPEC ||--|{ LEARNING_COMPONENT_SPEC : includes_component
+    COURSE_SPEC ||--|{ TEST_COMPONENT_SPEC : includes_test
+    LEARNING_COMPONENT_SPEC ||--o{ LESSON_SPEC : decomposes_into
+
+    %% Koppelingen specificatie ↔ beoogde uitkomst
+    PROGRAMME_SPEC }o--o{ LEARNING_OUTCOME : targets
+    COURSE_SPEC }o--o{ LEARNING_OUTCOME : targets
+    LEARNING_COMPONENT_SPEC }o--o{ LEARNING_OUTCOME : targets
+    TEST_COMPONENT_SPEC }o--o{ LEARNING_OUTCOME : assesses
+    LESSON_SPEC }o--o{ LESSON_OUTCOME : targets
+
+    %% ===== Onderwijsaanbod (instantie in tijd/capaciteit) =====
+    PROGRAMME_OFFERING }o--|| PROGRAMME_SPEC : instantiates
+    COURSE_OFFERING }o--|| COURSE_SPEC : instantiates
+    COMPONENT_OFFERING }o--|| LEARNING_COMPONENT_SPEC : instantiates
+    TEST_OFFERING }o--|| TEST_COMPONENT_SPEC : instantiates
+    LESSON_OFFERING }o--|| LESSON_SPEC : instantiates
+
+    %% ===== Onderwijsverbintenis (Association) =====
+    PERSON ||--o{ ASSOCIATION : participates
+    PROGRAMME_OFFERING ||--o{ ASSOCIATION : has
+    COURSE_OFFERING ||--o{ ASSOCIATION : has
+    COMPONENT_OFFERING ||--o{ ASSOCIATION : has
+    TEST_OFFERING ||--o{ ASSOCIATION : has
+    LESSON_OFFERING ||--o{ ASSOCIATION : has
+
+    %% ===== Onderwijsresultaat =====
+    ASSOCIATION ||--o{ RESULT_RECORD : yields
+    RESULT_RECORD }o--|| LEARNING_OUTCOME : evidences
+    RESULT_RECORD }o--|| LESSON_OUTCOME : evidences
+
+    %% ===== Toetsrij: scope van toetsing =====
+    ASSESSMENT_SPEC }o--o{ LEARNING_OUTCOME : assesses_scope
+    ASSESSMENT_SPEC }o--o{ LESSON_OUTCOME : assesses_scope
+    ASSESSMENT_OFFERING }o--|| ASSESSMENT_SPEC : instantiates
+    ASSESSMENT_OFFERING ||--o{ ASSOCIATION : has
+
+    %% ===== Kernattributen (indicatief, niet exhaustief) =====
+    QUALIFICATION_DOSSIER {
+      string dossier_id
+      string name
+    }
+    QUALIFICATION {
+      string qualification_id
+      string name
+      string level
+    }
+    CORE_TASK {
+      string core_task_id
+      string code
+      string name
+    }
+    WORK_PROCESS {
+      string work_process_id
+      string code
+      string name
+    }
+    LEARNING_OUTCOME {
+      string learning_outcome_id
+      string hierarchyLevel
+      string standardisationStatus
+    }
+    LESSON_OUTCOME {
+      string lesson_outcome_id
+      string hierarchyLevel
+    }
+    PROGRAMME_SPEC {
+      string programme_id
+      string curriculumType
+      string choiceGateType
+      string learningRouteType
+    }
+    COURSE_SPEC {
+      string course_id
+      bool choiceAvailable
+    }
+    LEARNING_COMPONENT_SPEC {
+      string learning_component_id
+      string hierarchyLevel
+      string deliveryForm
+    }
+    TEST_COMPONENT_SPEC {
+      string test_component_id
+      string assessmentLevel
+    }
+    PROGRAMME_OFFERING {
+      string programmeOffering_id
+      int maxNumberStudents
+    }
+    COURSE_OFFERING {
+      string courseOffering_id
+      int maxNumberStudents
+    }
+    COMPONENT_OFFERING {
+      string learningComponentOffering_id
+    }
+    TEST_OFFERING {
+      string testComponentOffering_id
+    }
+    ASSOCIATION {
+      string association_id
+      string role
+      string state
+    }
+    RESULT_RECORD {
+      string result_id
+      string type
+      string value
+    }
 ```
 
-**Naamgevingsdiscipline (negenvlaks):** de term *specificatie* duidt op een **sjabloon/ontwerp** vóór realisatie. Pas wanneer een specificatie wordt geïnstantieerd in **tijd** en met **capaciteit** ontstaat een *aanbod*. Pas wanneer een student zich daaraan koppelt ontstaat een *associatie* (inschrijving). Het OKx-profiel hanteert deze drie lagen consequent.
+**Notitie:** de ERD introduceert `RESULT_RECORD` als **conceptueel** resultaat-object om de kolom “Onderwijsresultaat” expliciet te maken. Dit object is **geen onderdeel** van het OEAPI consumer-profiel. In OEAPI zit het minimale resultaat in `Association.state`; rijkere bewijsvoering op LO-/lesuitkomst-niveau vereist een apart resultaat-koppelvlak (OKx) of een OEAPI change request. Dit model maakt alleen zichtbaar *waar* resultaat “logisch hangt” in de keten.
 
-### 12.2 Applicatielaag — uitwisselbare dataobjecten
+### 12.1 Informatiemodel Onderwijsontwerp (ArchiMate) — *wat zit er in een specificatie?*
 
-Op applicatielaag (MOKA-koppelvlakspecificatie-view) worden bedrijfsobjecten gerealiseerd door dataobjecten die in koppelvlakken worden uitgewisseld. De ArchiMate-DataObjects volgen waar mogelijk de OEAPI-naamgeving (`ProgrammeOffering`, `CourseOffering`, `Association`) wat de mapping vereenvoudigt.
+Deze paragraaf zoomt in op de **inhoud** van de belangrijkste specificatie-objecten (stadium 1), en gebruikt daarvoor het ArchiMate-view **`Informatiemodel Onderwijsontwerp`** als leidraad. Voor de bredere context (van visie/beleid naar concrete aanbod-realisatie) verwijzen we aanvullend naar view **`01. Onderwijsvisie vertalen naar onderwijsaanbod - Basis Model`**.
 
-| ArchiMate DataObject | OEAPI-realisatie | Functie in keten |
-|---------------------|------------------|------------------|
-| `ProgrammaOntwerpkader` | `Programme` (zonder offering) | Top-down ontwerp, kwalificatieRef, leerroutestructuur |
-| `ProgrammaSamenstelling` | `Programme` met child `Programme`s (`programmeType: "track"`) | Globale leerroute (cross-instelling) en gedetailleerd leertraject (intra-instelling) — ADR 0012 |
-| `LeertaakSpecificatie` | `Course` (met `learningOutcomeIds`) | Opleidingsonderdeel of zelfstandige leertaak; N:M via `programmeIds` |
-| `Leeractiviteit gegevens` | `LearningComponent` (`hierarchyLevel: "learning_activity"`) | Keuzeniveau van de student — ADR 0011 |
-| (impliciet: lesopdracht) | `LearningComponent` (kind, `hierarchyLevel: "lesson_assignment"`) | LMS-domein, fijnmazig |
-| `LeeruitkomstSpecificatie` | `LearningOutcome` (DAG) | Summatieve LO + formatieve LesU; CompetentNL-koppeling (§4.4) |
-| `Leervormspecificatie / kader gegevens` | OKx `educationSpecification.deliveryForm` + bijbehorende velden | Aanbodkenmerk — ADR 0011 |
-| `LesmateriaalSpecificaties` | OKx `educationSpecification.learningResourceGroups` | Welke leermiddelen zijn nodig |
-| `ProgrammeOffering` (OOAPI v6 in model) | `ProgrammeOffering` | Concrete uitvoering van een Programme in tijd |
-| `CourseOffering` | `CourseOffering` | Concrete uitvoering van een Course in tijd |
-| `LearningComponentOffering` | `LearningComponentOffering` | Concrete uitvoering van een LearningComponent (les of leeractiviteit) |
-| `TestComponentOffering` | `TestComponentOffering` | Concrete toets-/examenmoment |
-| `Offerings` (verzameling) | Resultset van een GET op `/offerings` | Wat de SKS-/Roostersysteem-/Edubroker-query terugkrijgt |
-| `RequestForOffering?` | **GAT** in OEAPI — workflow-object | Een student vraagt om aanbod dat nog niet ingepland is — signalering 7 |
-| `Association` | `Association` (per offering-type) | Inschrijving / actieve deelname / afgerond — OEAPI-kern volstaat |
+**Naamgevingsdiscipline (negenvlaks):**
 
-### 12.3 Specificatie → Aanbod → Inschrijving — de drie transformaties
+- **Specificatie** = ontwerp/sjabloon (stabiel; herbruikbaar; versieerbaar)
+- **Offering** = realisatie-informatie voor een specificatie (maar dit kent **meerdere detailniveaus**, zie §12.2)
+- **Association** = verbintenis student ↔ offering (rol + state)
+
+#### 12.1.1 Specificatie-objecten en hun informatiedragers (stadium 1)
+
+In OKx bestaat de “specificatie” uit twee soorten informatie die samen **altijd** nodig zijn:
+
+1. **Wat** (inhoud/dekking): `learningOutcomeIds` + `qualificationReference` (+ eventueel CompetentNL).
+2. **Hoe organiseerbaar** (constraints voor planning): `educationSpecification` (deliveryForm, timeAllocation, roomType, expertiseProfiles, learningResourceGroups, spreadPattern, requirements) + prerequisites + assessmentScope.
+
+Per **specificatie-laag** (conceptueel, zoals in het view “Informatiemodel Onderwijsontwerp”) betekent dat concreet:
+
+- **Programma-/opleidingsspecificatie**:
+  - **Kader/identiteit**: `qualificationReference` (scheme + dossier + qualification; optioneel coreTask/workProcess).
+  - **Structuur**: leerroute/trajectstructuur + keuze-gates (ADR 0012).
+  - **Dekking**: set van (summatieve) `learningOutcomeIds` die het programma claimt te dekken.
+  - **Waardering/credential**: `credentialDocument`.
+  - **(Optioneel) kaders voor realiseerbaarheid**: globale `educationSpecification` als *randvoorwaarde* (geen rooster).
+
+- **Onderwijseenheid-/onderdeel-specificatie**:
+  - **Dekking**: `learningOutcomeIds` + (optioneel) `qualificationReference` tot op workProcess.
+  - **Organiseerbaarheid (planbaarheid)**: `educationSpecification` (deliveryForm/timeAllocation/roomType/…).
+  - **Prerequisites**: `participationRequirements` (prerequisite-graaf).
+  - **Waardering/credential**: `credentialDocument`.
+
+- **Leeractiviteit-/lesopdracht-specificatie**:
+  - **Hiërarchie**: `hierarchyLevel` voor het onderscheid leeractiviteit vs lesopdracht (ADR 0011).
+  - **Dekking**: `learningOutcomeIds` (summatief of formatief; in DAG).
+  - **Organiseerbaarheid (CSP-kritisch)**: `educationSpecification` inclusief BOT/OOT + spreidingspatroon.
+  - **Prerequisites**: `participationRequirements`.
+
+- **Toets-/examen-specificatie**:
+  - **Niveau**: `assessmentLevel` (formative/summative).
+  - **Scope**: `assessmentScope` (welke LO-set / workProcessCodes worden beoordeeld).
+  - **Organiseerbaarheid**: `educationSpecification` (subset: roomType, expertiseProfiles, timeAllocation).
+  - **Kader**: `qualificationReference` (werkproces/kerntaak waar de toets op “landt”).
+
+- **Leeruitkomst-specificatie (summatief) / lesuitkomst-specificatie (formatief)**:
+  - **Hiërarchie**: `hierarchyLevel` = `learning_outcome` of `lesson_outcome` (DAG met parentIds/childIds).
+  - **Kader**: `qualificationReference` (minimaal; idealiter tot workProcess).
+  - **Standaardisatie**: `standardisationStatus`.
+  - **(Optioneel) arbeidsmarkt**: `competentNlRefs`.
+
+#### 12.1.2 “Informatiemodel Onderwijsontwerp” als cross reference naar planninginformatie
+
+Het ArchiMate-view laat zien dat de planninglaag naast de OEAPI-specificaties óók werkt met aanvullende (instelling-eigen) informatiedragers, o.a.:
+
+- `Onderwijsaanbod Model` — de gekozen modellering van aanbod (beleidskeuze; stuurt hoe specificaties tot offerings leiden).
+- `Jaarplanning` + `Jaarplanningsbeperkingen` — kalender/constraints voor de roosterautomaat/CSP.
+- `Plangroepering / Concept Lesgroep` — groepeerlogica tussen specificatie en concrete lesgroepen.
+- `Onderwijsteam Vlekkenplan` + `Lokalenvlek / cluster` + `Medewerker` — resource-profielen waarmee `educationSpecification` gematcht wordt.
+- `Schaarste van middelen` — expliciete bottlenecks/constraints.
+- Examen-informatie-objecten: `Examen`, `Examen instrument`, `Summatieve beoordeling`, `Summatief resultaat`, `Jaarplanning examens`.
+
+Deze objecten zitten **niet** in OEAPI, maar verklaren wél waarom `educationSpecification` zo rijk moet zijn: het is de “brug” tussen onderwijskundige specificatie en CSP/roostering.
+
+### 12.2 Wat wordt waar uitgewisseld? (stadium 1 → 2a → 2b → 3)
+
+Informatie-uitwisseling volgt het negenvlaksmodel, maar met één belangrijke precisering: “aanbod” kent twee lagen.
+
+- **2a — planbaar aanbod (planning)**: wel tijdvensters/perioden en capaciteitskaders, maar **geen** toewijzing van *concrete* resources (geen lokaal-instantie, geen personeelsnummer).
+- **2b — geroosterd aanbod (roostering)**: wél concrete reserveringen/toewijzingen (lokaal-instantie X, docent-instantie Y) in concrete tijdsloten.
+
+Elk stadium voegt informatie toe die in het vorige stadium **niet hoort**.
+
+#### 12.2.1 Uitwisseling stadium 1 — specificaties (CO → OC)
+
+**Payload**: alle specificatie-objecten inclusief OKx-extensies, met nadruk op “wat” en “planbaarheid”:
+
+- `qualificationReference`, `learningOutcomeIds`, `educationSpecification`, `credentialDocument`
+- prerequisites (`participationRequirements`)
+- toetsing (`assessmentLevel`, `assessmentScope`)
+
+#### 12.2.2 Uitwisseling stadium 2a — planbaar aanbod (Planning → OC)
+
+**Payload**: planbare aanbod-informatie, waarin een specificatie wordt “ingeschat/ingepast” in perioden en capaciteit, zonder concrete resource-instanties:
+
+- **Periode/venster**: planning-horizon (bijv. week-range, periode, buffer/acceptatie-venster)
+- **Capaciteit**: `maxNumberStudents`, `minNumberStudents` en (optioneel) prognosevelden
+- **Planstatus**: *planbaar / niet-planbaar* + redenen (bottleneck/constraint)
+
+Dit sluit aan op de ArchiMate-informatieobjecten `Onderwijsaanbod Model`, `Jaarplanning` en `Jaarplanningsbeperkingen`.
+
+#### 12.2.3 Uitwisseling stadium 2b — geroosterd aanbod (Roostering → OC)
+
+**Payload**: rooster/allocatie-informatie die van “planbaar” naar “geroosterd” brengt, inclusief concrete toewijzingen:
+
+- **Tijdsloten**: concrete start/eind voor onderwijs- en toetsmomenten
+- **Resources (instanties)**: lokaal-instantie, docent-instantie (bijv. personeelsnummer), (optioneel) groep/lesgroep-instantie
+- **Roosterstatus**: *geroosterd / gewijzigd / vervallen* + wijzigingsredenen
+
+Dit sluit aan op de ArchiMate-informatieobjecten `Plangroepering / Concept Lesgroep`, `Onderwijsteam Vlekkenplan`, `Lokalenvlek / cluster`, `Medewerker`, `Schaarste van middelen` en `Jaarplanning examens`.
+
+#### 12.2.4 Uitwisseling stadium 3 — associations (SKS/SVS/Aanmeldsysteem → OC)
+
+**Payload**: `Association` (per offering-type) met:
+
+- **Relatie**: `role` (student), + periodes/registratievelden uit `AssociationProperties`
+- **State**: `pending`/`enrolled`/`participating`/`completed`/`cancelled`/…
+
+**Onderwijsresultaat (minimum)**: `Association.state`. Rijkere resultaat-/evidence-data op LO/lesuitkomstniveau valt buiten OEAPI consumer-profiel (zie notitie bij `RESULT_RECORD`).
+
+### 12.3 Specificatie → planbaar aanbod → geroosterd aanbod → inschrijving
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Specificatie : ontwerper publiceert in OC
-    Specificatie --> Aanbod : planner instantieert in tijd + capaciteit
-    Aanbod --> Inschrijving : student koppelt zich (Association)
+    [*] --> Specificatie : ontwerper publiceert in OC, en geeft aan dat deze gepland moet worden.
+    Specificatie --> PlanbaarAanbod : planning toetst CSP (globale capaciteit/perioden, geen resources-instanties)
+    PlanbaarAanbod --> GeroosterdAanbod : roostering wijst lokaal/docent/groep toe in tijdsloten
+    GeroosterdAanbod --> Inschrijving : student koppelt zich (Association)
     Inschrijving --> Voltooid : Association.state = result
     Inschrijving --> Geannuleerd : Association.state = cancelled
-    Aanbod --> AfgelastAanbod : minNumberStudents niet gehaald
+    PlanbaarAanbod --> NietPlanbaar : bottleneck/constraints (Schaarste van middelen)
+    GeroosterdAanbod --> AfgelastAanbod : minNumberStudents niet gehaald of roosterconflict
     Specificatie --> Specificatie : nieuwe versie (componentState)
-    Aanbod --> Aanbod : capaciteitsupdate (rosteringState)
+    PlanbaarAanbod --> PlanbaarAanbod : capaciteitsupdate (planningState)
+    GeroosterdAanbod --> GeroosterdAanbod : roosterwijziging (rosteringState)
 ```
 
 | Transformatie | Trigger | Verantwoordelijke component | OKx/OEAPI-mechanisme |
 |---------------|---------|------------------------------|----------------------|
-| Specificatie → Aanbod | Strategisch besluit "gaan we deze opleiding dit jaar geven?" + planningsalgoritme | Planningssysteem | Planning POST'et `*Offering`-objecten naar OC, gekoppeld aan bestaande `Programme`/`Course`/`LearningComponent`/`TestComponent` |
-| Aanbod → Inschrijving | Studentaanmelding via SKS/SVS | SKS / SVS / Aanmeldsysteem | POST `Association` voor de juiste offering met `state: "pending"`/`"enrolled"` |
-| Aanbod afgelast | Capaciteitsondergrens niet gehaald (`enrolledNumberStudents < minNumberStudents`) | Planningssysteem | PATCH `state: "cancelled"` op offering; OC propageert |
-| Re-specificatie | Onderwijskundige wijziging | Curriculum-ontwerptool | Specificatie-update in OC met versionering — bestaande Offerings blijven actief tot eindperiode |
+| Specificatie → planbaar aanbod | Strategisch besluit + planningsalgoritme (CSP op profielen/aggregaten) | Planningssysteem | Planning publiceert planbaarheid + perioden/capaciteit (zonder lokaal/docent-instanties) |
+| Planbaar aanbod → geroosterd aanbod | Start roosterronde of her-roostering | Roostersysteem | Roostering publiceert concrete tijdsloten + resource-instanties (lokaal/docent/groep) |
+| Geroosterd aanbod → inschrijving | Studentaanmelding via SKS/SVS | SKS / SVS / Aanmeldsysteem | POST `Association` voor het geroosterde aanbod met `state: "pending"`/`"enrolled"` |
+| Aanbod afgelast | Ondergrens niet gehaald of conflict/uitval resources | Planning/Roostering | Publiceer status-update op aanbodlaag (planbaar/geroosterd) |
+| Re-specificatie | Onderwijskundige wijziging | Curriculum-ontwerptool | Specificatie-update in OC met versionering — gevolgen: herplanning/herroostering |
 
 ### 12.4 RequestForOffering — vraag-gestuurd aanbod
 
@@ -973,13 +1211,217 @@ Het ArchiMate-model toont een dataobject `RequestForOffering?` (vraagteken in na
 - **Top-down (gedekt)**: instelling specificeert → planner maakt aanbod → student tekent in.
 - **Bottom-up (vraagstuk)**: student of cohort vraagt aanbod aan dat (nog) niet bestaat → SKS/SVS dient `RequestForOffering` in → Planning evalueert haalbaarheid → terugkoppeling.
 
-OEAPI-kern kent geen `RequestForOffering`; dit is een **signalering** (zie §9 nr. 7) en mogelijk een eigen OKx-koppelvlak. Voor MVP is top-down voldoende.
+OEAPI-kern kent geen `RequestForOffering`; dit is een **signalering** (zie §9 nr. 7) en vraagt een eigen OKx-koppelvlak. Voor MVP is top-down voldoende.
 
 ---
 
+## 12.5 Specificatie-catalogus (attribuutniveau) — *onderwijsontwerp vóór OEAPI*
+
+Doel van deze sectie is om **per onderwijsspecificatie** (zoals benoemd in §12.0.2) te beschrijven **welke informatie erin zit**, op **attribuutniveau**, zónder al in OEAPI-termen te spreken. We gebruiken de benoemde **informatieobjecten uit de praatplaat / ArchiMate-view “Informatiemodel Onderwijsontwerp”** als **gegevensgroepen** (dat is het startpunt), waarbinnen attributen vallen.
+
+**Relatie met hoofdstuk 4 (leeruitkomsten):** hoofdstuk 4 definieert de semantiek van `Leeruitkomst` (summatief) en `Lesuitkomst` (formatief) en hun hiërarchie. In deze sectie leggen we vast **hoe** elke onderwijsspecificatie naar die leeruitkomsten verwijst: *targets* (dekt), *assesses* (toetst), of *supports* (didactische ondersteuning).
+
+**Notatie:**
+
+- **Gegevensgroep**: samenhangende set attributen (uit praatplaat/ArchiMate).
+- **Attributen**: de velden die minimaal nodig zijn om het object eenduidig te begrijpen en te plannen/roosteren.
+- **Verwijzing**: een ID/URI/code die naar een ander object verwijst (geen embed van de volledige inhoud).
+
+### 12.5.1 Opleidingsspecificatie (rij: `Kwalificatiedossier`)
+
+De opleidingsspecificatie is het **instellingsspecifieke ontwerp** van een opleiding die binnen een kwalificatiedossier valt. Dit object is de “container” waarbinnen meerdere programma’s/leerwegen kunnen bestaan.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `ownerOrganisation`, `version`, `status` | Eenduidige identificatie + lifecycle (concept/definitief/uitgefaseerd). |
+| Kwalificatiekader-koppeling | `qualificationReference` | Verwijst naar dossier + (optioneel) kwalificatie(s). |
+| Doel & positionering | `description`, `targetAudience`, `entryProfile`, `exitProfile` | Kader voor keuzes/advies; niet direct planbaar maar wel normatief. |
+| Domein/sector | `sectorReference`, `fieldsOfStudy` | Voor vindbaarheid en interoperabiliteit. |
+| Resultaat/credentialing | `credentialDocument` (type/register), `awardRules` | Wat kan/wordt uitgereikt bij afronding (diploma/certificaat). |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- Opleidingsspecificatie **verwijst** niet naar individuele leeruitkomsten, maar stelt het **kader**: “welk kwalificatiedossier/kwalificatie(s) hoort hierbij”.
+
+**Signaleringen / mogelijke gaten:**
+
+- `status` + `version` zijn essentieel voor publicatie/consumptie, maar worden vaak impliciet gelaten.
+- Meertaligheid (NL/EN) voor `name/description` is nog niet uitgewerkt.
+
+### 12.5.2 Opleidingsprogramma specificatie (rij: `Kwalificatie`)
+
+Een opleidingsprogramma specificatie is het **concrete programma** dat leidt tot één kwalificatie (of een kwalificatiepad). Dit is de laag waar leerroutekeuzes en het programma-ontwerpkader landen.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `version`, `status` | Versiebeheer is cruciaal bij wijzigingen over cohorten. |
+| Kwalificatiekader-koppeling | `qualificationReference` (incl. kwalificatie) | Verwijst naar de kwalificatie waarop het programma is gericht. |
+| Programmastructuur | `programmeStructure` (tracks/varianten), `compositionRules` | Welke varianten bestaan en hoe verhouden ze zich (leerroute/traject). |
+| Leerroute & keuze-gates | `learningRouteType`, `choiceGateType`, `selectionCriteria` | Keuzepunten en regels voor samenstellen/plaatsing. |
+| Dekking leeruitkomsten | `targetsLearningOutcomes` (verwijzingen) | De set summatieve leeruitkomsten die het programma moet dekken (hoofdstuk 4). |
+| Studielast & normering | `studyLoad`, `timeModel` | Totale omvang (SBU/EC) en normeringskader. |
+| Programmaregels | `programmeRegulations` | Regelement op programmaniveau: herkansingsbeleid, overgangsnormen, etc. |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- `targetsLearningOutcomes` verwijst naar **summatieve** leeruitkomsten (`Leeruitkomst`).
+- Programmaregels kunnen invloed hebben op **toetsplanning** (maar niet op toetsinhoud).
+
+**Signaleringen / mogelijke gaten:**
+
+- Er is behoefte aan een expliciet `academicYearValidity` / cohort-afbakening (welke cohorten vallen onder welke versie).
+- Er is (nog) geen standaard “regeltypen-catalogus” voor `programmeRegulations`.
+
+### 12.5.3 Onderwijseenheid specificatie (rij: `Kerntaak`)
+
+Onderwijseenheid specificatie is de **ontwerp-eenheid** waarmee een instelling het programma opknipt in planbare/organiseerbare delen (bijv. periodeblok, module, semesteronderdeel).
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `version`, `status` | Nodig voor publicatie en hergebruik. |
+| Kader-koppeling | `qualificationReference` (optioneel tot kerntaak) | Deze laag landt vaak op kerntaak-niveau. |
+| Samenstelling | `containsLearningParts` (verwijzingen), `containsTests` (verwijzingen) | Welke leeronderdelen en toetsonderdelen horen bij deze eenheid. |
+| Dekking leeruitkomsten | `targetsLearningOutcomes` (verwijzingen) | “Welke summatieve LO’s worden in deze eenheid afgedekt?” |
+| Planbaarheid (globaal) | `deliveryForm`, `timeAllocation`, `spreadPattern`, `roomType`, `expertiseProfiles`, `learningResourceGroups` | Profiel/aggregaat voor planning (geen concrete roosterallocatie). |
+| Deelname- en volgordelijkheid | `participationRequirements` | Prerequisites op eenheidsniveau (bv. propedeuse-eis). |
+| Waardering | `credentialDocument` | Wat levert afronding van deze eenheid op (certificaat/microcredential). |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- Deze specificatie **target** summatieve leeruitkomsten, en is daarmee traceerbaar naar **werkprocessen** en **kerntaken**.
+
+**Signaleringen / mogelijke gaten:**
+
+- Het onderscheid tussen *planbaarheid* (planning) en *roosterbaarheid* (roostering) vraagt om twee detailniveaus van dezelfde gegevensgroep (zie §12.2).
+
+### 12.5.4 Leeronderdeel specificatie / Leeractiviteitspecificatie (rij: `Werkproces`)
+
+Dit is het niveau waarop de student vaak **kiest** (leeractiviteit), en waarop resource-profielen concreet genoeg worden voor planning (BOT/OOT, ruimtetype, expertise, middelen), maar nog zonder concrete toewijzing.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `version`, `status` | Herbruikbaar “bouwblok”. |
+| Kader-koppeling | `qualificationReference` (tot werkproces) | Traceerbaarheid naar kwalificatiekader. |
+| Dekking | `targetsLearningOutcomes` (verwijzingen) | Welke summatieve LO’s worden primair afgedekt. |
+| Didactiek / leervorm | `deliveryForm`, `learningActivityType`, `guidanceLevel` | Onderwijskundige intentie (bv. simulatie, werkplekleren, project). |
+| Tijd | `timeAllocation` (BOT/OOT + unit), `spreadPattern` | Cruciaal voor planning (BOT → docent/ruimte). |
+| Ruimte | `roomType`, `roomRequirements` | Type + eisen (geen concreet lokaalnummer). |
+| Expertise | `expertiseProfiles` | Profiel van benodigde docent/assessor (geen personeelsnummer). |
+| Leermiddelen | `learningResourceGroups` | Groepen middelen/licenties (geen inventaris-asset-id). |
+| Volgordelijkheid | `participationRequirements` | Prerequisites tussen leeronderdelen. |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- Deze specificatie **target** summatieve leeruitkomsten en kan daarnaast **supports** formatieve lesuitkomsten (via lesspecificaties, §12.5.5).
+
+**Signaleringen / mogelijke gaten:**
+
+- Er is behoefte aan een expliciete *intensity/recurrence* representatie (bv. “elke dinsdag 10–12”), zie issue “fijnmazige roostering”.
+
+### 12.5.5 Lesspecificatie (rij: `Lesdoel / Lesuitkomst`)
+
+Lesspecificatie is het fijnmazige ontwerp voor één les/lesopdracht. Dit is de laag die direct koppelt aan **lesuitkomsten** (formatief) uit hoofdstuk 4.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `version`, `status` | Fijnmazig, maar herbruikbaar. |
+| Lesuitkomsten (formatief) | `targetsLessonOutcomes` (verwijzingen) | Directe relatie naar `Lesuitkomst` (hoofdstuk 4). |
+| Lesopzet | `lessonPlanRef` (verwijzing), `learningTasks` | Verwijzing naar lesplan + leertaak/werkvormen. |
+| Didactiek / leervorm | `deliveryForm`, `workForm`, `interactionPattern` | Concrete werkvorm (“werkcollege”, “rollenspel”, “instructie”). |
+| Tijd/ruimte/expertise/middelen | `timeAllocation`, `roomType`, `expertiseProfiles`, `learningResourceGroups` | Profiel voor planbaarheid/roosterbaarheid. |
+| Lesmateriaal | `learningMaterials` (verwijzingen) | Verwijzing naar lesmateriaal-specificaties. |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- Lesspecificatie **target** `Lesuitkomsten` (formatief) en **ondersteunt** daarmee één of meer summatieve `Leeruitkomsten` (indirect via de LO→LesU DAG).
+
+**Signaleringen / mogelijke gaten:**
+
+- “Lesplan” en “leertaak” zijn nu nog losjes gedefinieerd; er is een kans op overlap met LMS-structuren (LTI/IMS).
+
+### 12.5.6 Toetsonderdeel specificatie (toetsrij)
+
+Toetsonderdeel specificatie definieert **wat** beoordeeld wordt (scope) en **hoe** (vorm/instrument), en koppelt de toets aan kwalificatiekader en leeruitkomsten.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Identificatie & beheer | `id`, `name`, `version`, `status` | Nodig voor toetsbank/uitwisseling. |
+| Toetsniveau | `assessmentLevel` (formatief/summatief), `assessmentType` | Summatief valt onder examencommissie-context. |
+| Scope | `assessmentScope` (workProcessCodes, learningOutcomeRefs, lessonOutcomeRefs) | Wat wordt beoordeeld (set). |
+| Toetsvorm | `testForm` / `toetsvormspecificatie` | Bijvoorbeeld praktijk, theorie, portfolio, OSCE. |
+| Examenkader | `examSpecificationRef` (verwijzing) | Relatie toets ↔ examenconstructie. |
+| Instrument | `assessmentInstrumentRef` | Relatie naar toetsinstrument (item-bank / rubric / opdracht). |
+| Organiseerbaarheid | `timeAllocation`, `roomType`, `expertiseProfiles` | Planning/roostering-profiel van afname. |
+| Resultaatdefinitie | `resultModel` (scale, passCriteria, evidenceTypes) | Welke schaal en criteria horen bij slagen/zakken. |
+
+**Relatie met leeruitkomsten (hoofdstuk 4):**
+
+- Toetsonderdeel specificatie **assesses** summatieve leeruitkomsten (en optioneel lesuitkomsten) via `assessmentScope`.
+
+**Signaleringen / mogelijke gaten:**
+
+- Er is behoefte aan een expliciete, herbruikbare resultaat-/evidence-taal (rubrics, bewijsstukken) die niet in dit profiel zit.
+
+### 12.5.7 Lesplan (hulpspecificatie)
+
+Het lesplan is een **didactische gegevensgroep** die meerdere lesspecificaties kan sturen. Het is niet primair planbaar, maar stuurt consistentie van didactiek en leeractiviteiten.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Didactische opbouw | `phases` (intro/instructie/oefening/reflectie), `teacherActions`, `studentActivities` | Structuur die herbruikbaar is. |
+| Evaluatie (formatief) | `formativeChecks` | Korte checks gekoppeld aan lesuitkomsten. |
+| Materialen | `materials` (verwijzingen) | Naar lesmateriaal-specificaties. |
+
+### 12.5.8 Leertaak-specificatie (hulpspecificatie)
+
+Leertaak-specificatie beschrijft **wat de student doet** (taak/assignment) los van de organisatorische setting.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Taakomschrijving | `taskDescription`, `deliverables`, `acceptanceCriteria` | Wat wordt opgeleverd en wanneer is het “goed”. |
+| Context | `context`, `caseMaterialRef` | Casusmateriaal / context. |
+| Koppeling aan uitkomsten | `targetsLessonOutcomes` / `supportsLearningOutcomes` | Doelbinding (formatief primair). |
+
+### 12.5.9 LesmateriaalSpecificaties (hulpspecificatie)
+
+Lesmateriaal-specificaties maken leermiddelen expliciet zonder naar concrete assets te gaan.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Type & toegang | `resourceType`, `accessMode`, `licenceType`, `provider` | Bijvoorbeeld boek, e-learning, simulator, dataset. |
+| Beschrijving | `title`, `description`, `edition`, `language` | Vindbaarheid/gebruik. |
+| Vereisten | `requiredFor` (verwijzingen naar specificaties) | Waar is het materiaal verplicht/optioneel. |
+
+### 12.5.10 Leervormspecificatie (hulpspecificatie)
+
+Leervormspecificatie definieert het **vocabulaire** en de betekenis van leervormen die in andere specificaties worden gebruikt.
+
+| Gegevensgroep | Attributen (minimaal) | Toelichting |
+|---|---|---|
+| Leervorm | `deliveryForm` (code + label), `definition` | Eenduidige semantiek per leervorm. |
+| Resource-profiel | `defaultRoomType`, `defaultExpertiseProfiles`, `defaultResourceGroups` | Defaults om consistentie te stimuleren. |
+| Variaties | `variants` | Bijvoorbeeld “blended (50/50)”, “work_based_learning (BPV)”. |
+
+### 12.5.11 Cross-cutting regels (geldt voor alle specificaties)
+
+Om later een OEAPI-profiel te kunnen ontwerpen, zijn onderstaande attributen/regels **normatief** voor alle specificaties:
+
+- **Lifecycle & versie**: elk specificatie-object heeft `version` en `status` (en publicatiedatum).
+- **Traceerbaarheid**: elk object kan (waar relevant) naar `qualificationReference` verwijzen.
+- **Dekking/toetsing**: elk object dat inhoudelijk “iets doet” verwijst naar leeruitkomsten/lesuitkomsten via `targets…` of `assesses…`.
+- **Planbaarheid vs roosterbaarheid**: dezelfde gegevensgroepen bestaan op 2 detailniveaus:
+  - **planning**: profielen/aggregaten (geen resource-instanties)
+  - **roostering**: concrete toewijzingen (resource-instanties + tijdsloten)
+
+**Signaleringen / mogelijke gaten (globaal):**
+
+- Uniforme representatie voor **recurrence** (roosterpatronen) ontbreekt.
+- Uniforme representatie voor **regels/regelementen** (typologie + machineleesbaarheid) ontbreekt.
+- Uniforme representatie voor **resultaat/evidence** (rubrics, bewijsstukken) ontbreekt.
+
 ## 13. Resourcemapping — van leervorm naar reële middelen
 
-De planner moet voor elke `LearningComponentOffering` (en daaronder `TestComponentOffering`) bepalen of de instelling het **kan realiseren**. Dat is een Constraint Satisfaction Problem (CSP) dat alleen oplosbaar is wanneer het OKx-profiel de relatie tussen *leervorm* en *reële middelen* expliciet maakt.
+De keten maakt onderscheid tussen **planbaarheid** (planning) en **concrete toewijzing** (roostering). Planning moet voor elke te realiseren specificatie (en bijbehorende *planbaar aanbod*) bepalen of de instelling het **in totaal** kan dragen (profielen/aggregaten), terwijl roostering pas daarna concrete lokalen/docenten in tijdsloten reserveert. Dit is een Constraint Satisfaction Problem (CSP) dat alleen oplosbaar is wanneer het OKx-profiel de relatie tussen *leervorm* en *reële middelen* expliciet maakt.
 
 ### 13.1 Decision matrix: leervorm × ruimte × expertise × leermiddelen
 
@@ -1150,7 +1592,7 @@ Vanuit het ArchiMate-model komen de volgende benoemde flows tussen Curriculum-on
 
 | ArchiMate-flow | Richting | Inhoud |
 |----------------|----------|--------|
-| `Grofmazig Onderwijsontwerp` | CO → OC | Programme + Course-skelet, op zijn minst kwalificatieRef en LO's |
+| `Grofmazig Onderwijsontwerp` | CO → OC | Programme + Course-skelet, op zijn minst qualificationReference en LO's |
 | `Herbruikbaar (fijnmazig) aanbod` | OC → CO | Bestaande LearningComponents/Courses van eigen of andere instelling |
 | `Concept Onderwijsprogramma en opleidingsonderdelen` | CO → Planning | Voorlopig ontwerp ter beoordeling planbaarheid |
 | `Concept Meerjarenplanning` | Planning → CO | Terugkoppeling: realiseerbaar/niet, suggesties |
@@ -1158,7 +1600,7 @@ Vanuit het ArchiMate-model komen de volgende benoemde flows tussen Curriculum-on
 
 ### 16.1 Happy flow — top-down nieuwe opleiding ontwerpen en publiceren
 
-> **Scenario**: Onderwijsontwerper Aida ontwerpt een nieuwe opleiding "Apothekersassistent" (mbo-4, kwalificatiedossier 25391) en publiceert deze naar de OC.
+> **Scenario**: Onderwijsontwerper Aida ontwerpt een nieuwe opleiding "Apothekersassistent" (mbo-4, Crebo-dossier 23450 / kwalificatie 27141) en publiceert deze naar de OC.
 
 ```mermaid
 sequenceDiagram
@@ -1170,8 +1612,8 @@ sequenceDiagram
     participant SVS as Studentvolgsysteem
 
     Ontwerper->>CO: Maak Programme "Apothekersassistent" (mbo-4)
-    Note over CO: kwalificatieRef: dossier 25391<br/>curriculumType: nominal<br/>studyLoad: 4800 SBU
-    CO->>OC: GET /learningOutcomes?qualificationRef.dossier=25391
+    Note over CO: qualificationReference: scheme=crebo, dossier=23450, qualification=27141<br/>curriculumType: nominal<br/>studyLoad: 4800 SBU
+    CO->>OC: GET /learningOutcomes?qualificationReference.scheme=crebo&qualificationReference.dossier=23450&qualificationReference.qualification=27141
     OC-->>CO: Bestaande LO's (Herbruikbaar fijnmazig aanbod)
     Note over Ontwerper: Aida kiest LO's of maakt nieuwe
     Ontwerper->>CO: Voeg nieuwe LO's toe (concept) + competentNlRefs
@@ -1210,12 +1652,12 @@ sequenceDiagram
     participant Edubroker as Sector Edubroker
 
     Ontwerper->>CO: Zoek course met LO "Farmacologie" + level mbo-4
-    CO->>OC: GET /courses?learningOutcomes.qualificationRef.kerntaak=B1-K2&expand=learningComponents,learningOutcomes
+    CO->>OC: GET /courses?learningOutcomes.qualificationReference.coreTask=B1-K2&expand=learningComponents,learningOutcomes
     OC-->>CO: Course "Farmaceutische theorie" + LCs
     alt Eigen instelling
         Note over CO: Course gevonden in eigen OC
     else Cross-instelling
-        CO->>Edubroker: GET /federated/courses?qualificationRef=...
+        CO->>Edubroker: GET /federated/courses?qualificationReference=...
         Edubroker-->>CO: Course van andere instelling met OKx-profiel
     end
     Ontwerper->>CO: Voeg bestaande Course toe aan eigen Programme
@@ -1247,12 +1689,12 @@ sequenceDiagram
     else Ontwerper corrigeert Course-totaal naar 220
         Ontwerper->>CO: Course.studyLoad = 220
         Note over Ontwerper: Niet aanvaardbaar — kwalificatiedossier eist 240 SBU
-        CO-->>Ontwerper: ⚠️ Onverenigbaar met kwalificatieRef
+        CO-->>Ontwerper: ⚠️ Onverenigbaar met qualificationReference
     end
     Note over OC: Geen partial publish: alles-of-niets<br/>(transactional integrity per Course-boom)
 ```
 
-### 16.4 Faalpad — ontbrekende kwalificatieRef bij summatieve LO
+### 16.4 Faalpad — ontbrekende qualificationReference bij summatieve LO
 
 ```mermaid
 sequenceDiagram
@@ -1552,7 +1994,7 @@ sequenceDiagram
 
     Student->>SKS: Articuleert leervraag<br/>(via AI-coaching of trechter)
     SKS->>SKS: Vertaal vrije tekst naar trechterparameters<br/>(geo, budget, planningshorizon, LO's, leervorm, etc.)
-    Note over SKS: queryparameters per ADR 0007:<br/>?startAfter=2026-01-01<br/>&maxCost=60000<br/>&geo=ring_amsterdam<br/>&learningOutcomes=cnl:skill/specifiek/...<br/>&modesOfDelivery=blended,classroom<br/>&qualificationDossier=25391
+    Note over SKS: queryparameters per ADR 0007:<br/>?startAfter=2026-01-01<br/>&maxCost=60000<br/>&geo=ring_amsterdam<br/>&learningOutcomes=cnl:skill/specifiek/...<br/>&modesOfDelivery=blended,classroom<br/>&qualificationReference.scheme=crebo<br/>&qualificationReference.dossier=23450<br/>&qualificationReference.qualification=27141
     SKS->>OC: GET /offerings (gefilterd)
     OC-->>SKS: Set van programmes/courses/LCs/TCs<br/>met educationSpecification per LC<br/>match-percentage o.b.v. LO-overlap
     SKS-->>Student: Match-resultaten<br/>+ leeractiviteiten als keuzeniveau (ADR 0011)
@@ -1701,7 +2143,7 @@ Deze 21 flows vormen tezamen het **referentie-interactiemodel** van de OKx-keten
 - 5 uitgewerkte scenario's over Npuls-leerroutes (regulier, versneld, personalisatie intra/inter-instelling, modulair)
 - 3 perspectieven per scenario (ontwerper, planner, student)
 - Cross-instelling interoperabiliteit: wat moet standaard zijn, wat mag instelling-specifiek blijven
-- Credentialing-cascade (badge → microcredential → certificaat → diploma) met `waardeDocument`
+- Credentialing-cascade (badge → microcredential → certificaat → diploma) met `credentialDocument`
 
 **Gedaan (v4):**
 - LearningOutcome-voorbeelduitwerkingen met CompetentNL-taxonomieën (§4.4)
