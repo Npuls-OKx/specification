@@ -1921,7 +1921,7 @@ sequenceDiagram
     participant CO as Curriculum-ontwerptool
     participant OC as Onderwijscatalogus
     participant Edubroker as Sector Edubroker
-    participant PubSub-Bus
+    participant PubSubBus as PubSub-Bus
 
     Ontwerper->>CO: Maak Programme "Apothekersassistent" (mbo-4)
     Note over CO: qualificationReference: scheme=crebo, dossier=23450, qualification=27141<br/>curriculumType: nominal<br/>studyLoad: 4800 SBU
@@ -1935,21 +1935,21 @@ sequenceDiagram
     end
     Ontwerper->>CO: Ontwerper kiest bestaande onderwijsspecificaties of maakt nieuwe
     alt kiest bestaande specificaties
-    	CO->>OC: PUT /educationSpecification bestaande UUID's
-        CO->>PubSub-Bus: subscribe op Subscription EducationSpecificationUpdates <UUID's>
+        CO->>OC: PUT /educationSpecification bestaande UUID's
+        CO->>PubSubBus: subscribe op Subscription EducationSpecificationUpdates <UUID's>
     end
     alt maakt nieuwe specificaties
-        Note over Ontwerper: 
+        Note over Ontwerper: Vul nieuwe onderwijsspecificatie (concept) aan met LO's en competentNlRefs
         Ontwerper->>CO: Voeg nieuwe onderwijsspecificatie toe (concept) + LO's + competentNlRefs
         CO->>OC: PUT /educationSpecification nieuwe UUID's + concept status + LO's + competentNlRefs + en meer metadata
         OC-->>CO: 201 Created (educationSpecification-id's)
         OC-->>OC: Request for Detailed Specification (binnen OC)
         Ontwikkelaar->>OC: Werk fijnmazig aanbod uit in bestaande educationSpecifications
         Note over CO: educationSpecification per LC<br/>(deliveryForm, roomType, expertiseProfiles, learningResourceGroups)<br/>componentStudyLoad bottom-up
-        OC-->>OC: Zodra onderwijsontwikkelproces klaar is; publiceer specificaties
+        OC-->>OC: Zodra onderwijsontwikkelproces klaar is — publiceer specificaties
         OC-->>CO: PUT /educationSpecification (publish-status) + UUID's
     end
-  
+
 ```
 
 ### 16.2 Notificatie bij bijwerken onderwijsspecificatie
