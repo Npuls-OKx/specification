@@ -1927,7 +1927,7 @@ sequenceDiagram
     Note over CO: qualificationReference: scheme=crebo, dossier=23450, qualification=27141<br/>curriculumType: nominal<br/>studyLoad: 4800 SBU
     alt Eigen instelling
         CO->>OC: GET /learningOutcomes?<set aan leeruitkomsten zoals gedefinieerd door onderwijsontwerper voor programme MBO-4>, <query parameters die grootte van learning outcome scopen> 
-        OC-->>CO: referentie in de vorm van UUID van onderwijsspecificatie, URI/URL naar fijnmazig aanbod.
+        OC->>CO: referentie in de vorm van UUID van onderwijsspecificatie, URI/URL naar fijnmazig aanbod.
     end
     alt Cross instelling
         CO->>Edubroker: GET /federated/courses?qualificationReference=<set aan learning outcomes zoals gedefinieerd door onderwijsontwerper voor programme MBO-4>
